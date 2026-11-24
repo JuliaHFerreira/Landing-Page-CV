@@ -1,0 +1,25 @@
+# BMAD
+.agents/
+*[Bb][Mm][Aa][Dd]*
+
+# Visual Studio e Visual Studio Code
+.vs/
+.vscode/
+*.code-workspace
+*.sln
+*.slnx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.vcxproj*
+*.vsconfig
+*.csproj
+*.vbproj
+*.fsproj
+*.njsproj
+*.esproj
+*.slnf
+[Bb]in/
+[Oo]bj/
