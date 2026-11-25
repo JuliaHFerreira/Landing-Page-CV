@@ -42,11 +42,13 @@ Formação em Análise e Desenvolvimento de Sistemas pela UniCesumar, concluída
 
 Exibir a frase logo abaixo de **Júlia Helena Ferreira**. O cargo **Analista de Desenvolvimento de Software** fica na trajetória da Sportive.
 
-1. **Apresentação.** Mostrar o nome, a frase aprovada e links diretos para o LoadFlow e o currículo. As datas de experiência ficam na trajetória.
-2. **Foto e tecnologias.** Exibir Java, Kotlin, Spring Boot, Android, Jetpack Compose, ADVPL, TOTVS Protheus, APIs REST e SQL em etiquetas fixas. No desktop, elas ficam junto à foto. No celular, passam para baixo dela.
-3. **Projetos.** Colocar o LoadFlow em destaque logo após a apresentação, com o status **Em uso na Sportive** e um texto curto sobre as funcionalidades em desenvolvimento.
+O site atual é a referência visual e de navegação. A prévia anterior foi rejeitada. A página funciona como currículo navegável e mantém a sequência **Início → Sobre Mim → Jornada Profissional → Habilidades → Projetos → Formação → Contato**.
+
+1. **Apresentação.** Preservar a saudação, o nome em degradê e a composição com foto. Usar a frase aprovada e dar acesso ao PDF por **Baixar currículo**, ao lado de **Ver projetos**. As datas de experiência ficam na trajetória.
+2. **Foto e tecnologias.** Preservar o contorno orgânico animado da foto e os cartões flutuantes. Acrescentar Kotlin, Jetpack Compose e TOTVS Protheus junto a Java e Spring Boot, distribuindo os cartões para manter o rosto livre. Conferir espaço e movimento em telas pequenas.
+3. **Projetos.** Apresentar o LoadFlow como primeiro cartão em **Projetos em Destaque**, com o status **Em uso na Sportive** e um texto curto sobre as funcionalidades em desenvolvimento. Os demais projetos continuam na seção.
 4. **Trajetória e habilidades.** Usar uma linha do tempo com as datas confirmadas. Organizar as competências em grupos como backend, Android, ERP e integrações, dados, testes e entrega, e IA aplicada ao desenvolvimento.
-5. **UX e animações.** Encurtar o topo, melhorar contraste e hierarquia e trocar o movimento contínuo por transições curtas. Respeitar a preferência por movimento reduzido e manter o conteúdo visível ao navegar.
+5. **UX e animações.** Preservar a entrada escalonada da abertura, a flutuação dos cartões e a revelação das seções durante a rolagem. Refinar amplitude, ritmo e espaçamento para dar fluidez. Respeitar a preferência por movimento reduzido e manter o conteúdo visível ao navegar.
 6. **Currículo.** Atualizar o PDF com a trajetória confirmada, a responsabilidade pela implantação de sistemas, o LoadFlow em uso, as competências, a formação e o inglês N2. Conferir a consistência com o conteúdo do site.
 
 ## Conferência antes de concluir a implementação
