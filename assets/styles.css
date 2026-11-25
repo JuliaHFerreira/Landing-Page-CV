@@ -1280,12 +1280,12 @@ section {
     }
 
     .hero-title {
-        margin-bottom: 8px;
+        margin-bottom: 14px;
         font-size: clamp(28px, 4.5svh, 42px);
     }
 
     .hero-description {
-        margin-bottom: 12px;
+        margin-bottom: 20px;
         font-size: 14px;
         line-height: 1.45;
     }
