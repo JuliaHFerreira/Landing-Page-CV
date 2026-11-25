@@ -198,32 +198,6 @@ for (let i = positions.length - 1; i > 0; i--) {
 }
 badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positions[i]));
 
-// Varia o fundo decorativo a cada abertura, mantendo a distribuição pela tela.
-const binaryStreams = document.querySelectorAll('.binary-stream');
-binaryStreams.forEach((stream, index) => {
-    const left = (index + Math.random() * .6) * 100 / binaryStreams.length;
-    stream.style.setProperty('--x', left.toFixed(2) + '%');
-    stream.style.setProperty('--stream-opacity', left > 10 && left < 48 ? '.4' : '.8');
-    stream.style.setProperty('--size', (10 + Math.random() * 12).toFixed(1) + 'px');
-    stream.style.setProperty('--speed', (22 + Math.random() * 24).toFixed(1) + 's');
-    stream.style.setProperty('--delay', (-Math.random() * 50).toFixed(1) + 's');
-});
-
-const symbolSlots = [
-    [7, 14], [85, 12], [22, 83], [85, 82], [2, 45], [92, 42],
-];
-for (let i = symbolSlots.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [symbolSlots[i], symbolSlots[j]] = [symbolSlots[j], symbolSlots[i]];
-}
-document.querySelectorAll('.code-symbol').forEach((symbol, index) => {
-    const [left, top] = symbolSlots[index];
-    symbol.style.inset = (top + Math.random() * 4) + '% auto auto ' + (left + Math.random() * 3) + '%';
-    symbol.style.animationDelay = (-Math.random() * 8) + 's';
-    symbol.style.setProperty('--float-speed', (8 + Math.random() * 6).toFixed(1) + 's');
-    symbol.style.animationDirection = index % 2 === 0 ? 'alternate' : 'alternate-reverse';
-});
-
 function syncMenuState() {
     const open = sideMenu.classList.contains('active');
     hamburger.setAttribute('aria-expanded', String(open));
