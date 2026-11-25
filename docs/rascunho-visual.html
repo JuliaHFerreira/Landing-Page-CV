@@ -167,7 +167,7 @@
                             <span class="timeline-period">Out/2026 – atual</span>
                             <h3>Analista de Desenvolvimento de Software</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvo sistemas internos em Java e Kotlin, implemento regras de negócio em ADVPL e crio APIs no Protheus. Uso IA e BMAD para apoiar a programação e a documentação.</p>
+                            <p>Desenvolvimento de sistemas internos, integrações com o Protheus e evolução do LoadFlow, aplicativo Android em uso na expedição.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -176,7 +176,7 @@
                             <span class="timeline-period">Fev/2026 – set/2026</span>
                             <h3>Desenvolvedora ADVPL / Assistente de TI III</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvi rotinas ADVPL e integrações REST no Protheus. Criei consultas e scripts para Oracle, Firebird e SQL Server e treinei usuários das áreas de negócio.</p>
+                            <p>Customizações no TOTVS Protheus, integração via APIs REST e apoio às áreas de negócio.</p>
 
                         </div>
                     </div>
@@ -187,6 +187,8 @@
                             <h3>Desenvolvedora ADVPL / Assistente de TI II</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
                             <p>Desenvolvimento e manutenção de rotinas ADVPL, consultas SQL e suporte à implantação de sistemas.</p>
+
+                        <button class="btn-expand" onclick="openModal('modal-assistente-ti')">Ver detalhes →</button>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -195,7 +197,9 @@
                             <span class="timeline-period">Jan/2023 – fev/2025</span>
                             <h3>Auxiliar de E-commerce I, II e III</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Fotografei e cadastrei produtos no ERP ATON, atendi clientes em marketplaces e acompanhei campanhas. Também apoiei a criação de relatórios SQL, o desenvolvimento de interfaces em Delphi e a implantação do Protheus.</p>
+                            <p>Cadastro de produtos, atendimento e campanhas de e-commerce, com apoio a relatórios em SQL e à implantação do Protheus.</p>
+
+                        <button class="btn-expand" onclick="openModal('modal-ecommerce-iii')">Ver detalhes →</button>
                         </div>
                     </div>
                     <div class="timeline-item" data-year="2022">
@@ -204,7 +208,6 @@
                             <span class="timeline-period">Jun/2022 - Jan/2023</span>
                             <h3>Mídias Sociais (PJ)</h3>
                             <p class="company">Fujii Tech</p>
-                            <p>Cuidei das redes sociais, da identidade visual da empresa e das vendas online.</p>
                         </div>
                     </div>
 
@@ -214,7 +217,6 @@
                             <span class="timeline-period">Fev/2021 - Mai/2022</span>
                             <h3>Jovem Aprendiz - Qualidade</h3>
                             <p class="company">Maxsoy Alimentos Ltda</p>
-                            <p>Apoiei a gestão da qualidade e a qualificação de fornecedores. Registrei não conformidades, atualizei indicadores e conferi materiais recebidos.</p>
                         </div>
                     </div>
                 </div>
@@ -592,6 +594,45 @@
             <p>&copy; 2026 Júlia Helena Ferreira.</p>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modal-assistente-ti" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-assistente-ti')">&times;</span>
+            <h3>Desenvolvedora ADVPL / Assistente de TI II</h3>
+            <p class="modal-company">Sportive Indústria e Comércio</p>
+            <p class="modal-period">Mar/2025 – fev/2026</p>
+            <ul class="modal-list">
+                <li>Desenvolvimento de scripts SQL em SQL Server, Oracle e Firebird</li>
+                <li>Modelagem e estruturação de banco de dados</li>
+                <li>Implementação do sistema WMS SaaS</li>
+                <li>Customizações no TOTVS Protheus (ADVPL)</li>
+                <li>Suporte técnico e manutenção de infraestrutura</li>
+                <li>Treinamentos em TOTVS Protheus e WMS SaaS</li>
+                <li>Migração e saneamento de dados</li>
+                <li>Integração com APIs REST utilizando Postman</li>
+                <li>Automação com Power Query</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-ecommerce-iii" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-ecommerce-iii')">&times;</span>
+            <h3>Auxiliar de E-commerce I, II e III</h3>
+            <p class="modal-company">Sportive Indústria e Comércio</p>
+            <p class="modal-period">Jan/2023 – fev/2025</p>
+            <ul class="modal-list">
+                <li>Fotografia, edição e cadastro de produtos no ERP ATON (Ambarx)</li>
+                <li>Atendimento via chat em Mercado Livre, Shopee e Magalu</li>
+                <li>Criação e acompanhamento de campanhas promocionais</li>
+                <li>Desenvolvimento de scripts SQL para relatórios</li>
+                <li>Desenvolvimento em Delphi para sistemas empresariais</li>
+                <li>Suporte de TI aos funcionários</li>
+                <li>Auxiliar na implementação do TOTVS</li>
+            </ul>
+        </div>
+    </div>
 
     <script>
         const badges = [...document.querySelectorAll('.hero-image .floating-card')];
