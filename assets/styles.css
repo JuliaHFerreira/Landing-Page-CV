@@ -1181,33 +1181,32 @@ section {
 
 .code-symbol {
     position: absolute;
-    font: 600 clamp(38px, 4.5vw, 68px)/1 ui-monospace, SFMono-Regular, Consolas, monospace;
-    color: rgba(196, 181, 253, .38);
+    font: 500 clamp(28px, 3.5vw, 50px)/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+    color: rgba(196, 181, 253, .3);
     text-shadow: 0 0 24px rgba(139, 92, 246, .2);
-    animation: code-float 8s ease-in-out infinite alternate;
+    animation: code-float 7s ease-in-out infinite alternate;
 }
 
 .code-braces { top: 18%; left: 8%; }
 .code-tags { top: 13%; right: 9%; animation-delay: -3s; }
 .code-arrow { bottom: 16%; left: 6%; animation-delay: -5s; }
 .code-brackets { bottom: 14%; right: 8%; animation-delay: -2s; }
-.code-close { top: 45%; left: 48%; animation-delay: -6s; }
 
 .code-panel {
     position: absolute;
-    top: 24%;
-    left: 1%;
-    width: clamp(100px, 12vw, 175px);
+    top: 11%;
+    left: 25%;
+    width: clamp(90px, 10vw, 140px);
     padding: 14px 12px;
-    border: 1px solid rgba(167, 139, 250, .3);
-    border-radius: 9px;
-    background: rgba(26, 26, 36, .4);
-    opacity: .45;
+    rotate: -8deg;
+    opacity: .25;
+    animation: code-float 12s ease-in-out -4s infinite alternate;
 }
 
-.code-panel-secondary { top: auto; left: auto; right: 2%; bottom: 18%; }
+.code-panel-secondary { top: auto; left: 48%; bottom: 12%; rotate: 8deg; animation-delay: -7s; }
 .code-panel i {
     display: block;
+    opacity: .35;
     height: 3px;
     margin-block: 9px;
     width: 90%;
@@ -1234,8 +1233,8 @@ section {
 }
 
 @keyframes code-float {
-    from { transform: translateY(14px); opacity: .5; }
-    to { transform: translateY(-18px); opacity: 1; }
+    from { transform: translate(-12px, 20px) rotate(-4deg); opacity: .4; }
+    to { transform: translate(18px, -40px) rotate(4deg); opacity: .8; }
 }
 
 @media (max-width: 768px) {
@@ -1244,7 +1243,8 @@ section {
     .binary-stream:nth-child(3n) { display: none; }
     .code-braces { left: 3%; }
     .code-tags { right: 3%; }
-    .code-close { left: auto; right: 3%; top: 48%; }
+    .code-panel { left: 3%; top: 38%; }
+    .code-panel-secondary { top: auto; left: auto; right: 3%; bottom: 9%; }
 }
 
 .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }

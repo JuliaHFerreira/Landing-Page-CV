@@ -207,7 +207,7 @@ document.querySelectorAll('.binary-stream').forEach((stream, index) => {
 });
 
 const symbolSlots = [
-    [5, 13], [83, 12], [3, 76], [85, 80], [44, 15],
+    [7, 14], [85, 12], [22, 83], [85, 82],
 ];
 for (let i = symbolSlots.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
