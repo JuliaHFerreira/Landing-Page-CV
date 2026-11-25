@@ -194,16 +194,16 @@ toggleExperiences.addEventListener('click', () => {
 const skillsGrid = document.getElementById('lista-habilidades');
 const toggleSkills = document.getElementById('toggleSkills');
 const skillPreview = skillsGrid.children[2];
-const mobileSkills = window.matchMedia('(max-width: 768px)');
+const mobileViewport = window.matchMedia('(max-width: 768px)');
 
 function syncSkillPreview() {
-    skillPreview.inert = mobileSkills.matches && skillsGrid.classList.contains('is-collapsed');
+    skillPreview.inert = mobileViewport.matches && skillsGrid.classList.contains('is-collapsed');
 }
 
 skillsGrid.classList.add('is-collapsed');
 toggleSkills.parentElement.hidden = false;
 syncSkillPreview();
-mobileSkills.addEventListener('change', syncSkillPreview);
+mobileViewport.addEventListener('change', syncSkillPreview);
 toggleSkills.addEventListener('click', () => {
     const collapsed = skillsGrid.classList.toggle('is-collapsed');
     syncSkillPreview();
@@ -216,10 +216,19 @@ toggleSkills.addEventListener('click', () => {
 
 const projectsGrid = document.getElementById('lista-projetos');
 const toggleProjects = document.getElementById('toggleProjects');
+const projectPreview = projectsGrid.children[2];
+
+function syncProjectPreview() {
+    projectPreview.inert = mobileViewport.matches && projectsGrid.classList.contains('is-collapsed');
+}
+
 projectsGrid.classList.add('is-collapsed');
 toggleProjects.parentElement.hidden = false;
+syncProjectPreview();
+mobileViewport.addEventListener('change', syncProjectPreview);
 toggleProjects.addEventListener('click', () => {
     const collapsed = projectsGrid.classList.toggle('is-collapsed');
+    syncProjectPreview();
     toggleProjects.setAttribute('aria-expanded', String(!collapsed));
     toggleProjects.textContent = collapsed ? 'Ver mais projetos' : 'Ver menos projetos';
     if (collapsed) {
