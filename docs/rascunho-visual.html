@@ -77,6 +77,24 @@
     }
     .experience-actions { text-align: center; margin-top: 12px; }
     .experience-actions[hidden] { display: none; }
+    .side-menu {
+        right: 0;
+        max-width: 100vw;
+        height: 100dvh;
+        transform: translateX(105%);
+        visibility: hidden;
+        transition: transform .32s ease, visibility 0s .32s;
+    }
+    .side-menu.active {
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform .32s ease;
+    }
+    .hamburger.active { visibility: hidden; pointer-events: none; }
+    .close-menu:hover { transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+        .side-menu, .side-menu.active { transition: none; }
+    }
     </style>
 </head>
 <body>
@@ -85,7 +103,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#home" class="logo">JHF<span>.</span></a>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
+                <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-controls="sideMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -96,7 +114,7 @@
         <!-- Menu Lateral -->
         <div class="side-menu" id="sideMenu">
             <div class="side-menu-content">
-                <button class="close-menu" id="closeMenu">&times;</button>
+                <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link">Início</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -744,5 +762,25 @@
         badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positions[i]));
     </script>
     <script src="../scripts/script.js"></script>
+    <script>
+        function syncPreviewMenu() {
+            const open = sideMenu.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', String(open));
+            sideMenu.inert = !open;
+            if (open) closeMenu.focus();
+        }
+        syncPreviewMenu();
+        hamburger.addEventListener('click', syncPreviewMenu);
+        closeMenu.addEventListener('click', () => {
+            syncPreviewMenu();
+            hamburger.focus();
+        });
+        navLinks.forEach(link => link.addEventListener('click', syncPreviewMenu));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && sideMenu.classList.contains('active')) {
+                closeMenu.click();
+            }
+        });
+    </script>
 </body>
 </html>
