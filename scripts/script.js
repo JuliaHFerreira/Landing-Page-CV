@@ -200,7 +200,9 @@ badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positio
 
 // Varia o fundo decorativo a cada abertura, mantendo a distribuição pela tela.
 document.querySelectorAll('.binary-stream').forEach((stream, index) => {
-    stream.style.setProperty('--x', (index * 3.85 + Math.random() * 2).toFixed(2) + '%');
+    const left = index * 3.85 + Math.random() * 2;
+    stream.style.setProperty('--x', left.toFixed(2) + '%');
+    stream.style.setProperty('--stream-opacity', left > 10 && left < 48 ? '.3' : '.8');
     stream.style.setProperty('--size', (10 + Math.random() * 12).toFixed(1) + 'px');
     stream.style.setProperty('--speed', (22 + Math.random() * 24).toFixed(1) + 's');
     stream.style.setProperty('--delay', (-Math.random() * 50).toFixed(1) + 's');
@@ -217,6 +219,8 @@ document.querySelectorAll('.code-symbol').forEach((symbol, index) => {
     const [left, top] = symbolSlots[index];
     symbol.style.inset = (top + Math.random() * 4) + '% auto auto ' + (left + Math.random() * 3) + '%';
     symbol.style.animationDelay = (-Math.random() * 8) + 's';
+    symbol.style.setProperty('--float-speed', (8 + Math.random() * 6).toFixed(1) + 's');
+    symbol.style.animationDirection = index % 2 === 0 ? 'alternate' : 'alternate-reverse';
 });
 
 function syncMenuState() {

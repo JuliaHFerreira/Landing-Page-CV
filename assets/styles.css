@@ -1165,6 +1165,7 @@ section {
     display: flex;
     flex-direction: column;
     color: rgba(167, 139, 250, .1);
+    opacity: var(--stream-opacity, .8);
     font: var(--size, 13px)/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
     animation: binary-fall var(--speed) linear var(--delay) infinite;
 }
@@ -1184,7 +1185,7 @@ section {
     font: 500 clamp(28px, 3.5vw, 50px)/1 ui-monospace, SFMono-Regular, Consolas, monospace;
     color: rgba(196, 181, 253, .3);
     text-shadow: 0 0 24px rgba(139, 92, 246, .2);
-    animation: code-float 7s ease-in-out infinite alternate;
+    animation: code-float var(--float-speed, 9s) ease-in-out infinite alternate;
 }
 
 .code-braces { top: 18%; left: 8%; }
@@ -1203,7 +1204,7 @@ section {
     animation: code-float 12s ease-in-out -4s infinite alternate;
 }
 
-.code-panel-secondary { top: auto; left: 48%; bottom: 12%; rotate: 8deg; animation-delay: -7s; }
+.code-panel-secondary { top: auto; left: 48%; bottom: 12%; rotate: 8deg; animation-delay: -7s; animation-direction: alternate-reverse; }
 .code-panel i {
     display: block;
     opacity: .35;
@@ -1211,20 +1212,46 @@ section {
     margin-block: 9px;
     width: 90%;
     background: repeating-linear-gradient(90deg, #a78bfa 0 17px, transparent 17px 22px);
-    animation: code-writing 8s steps(20, end) -3s infinite both;
+    animation: code-writing-1 12s linear infinite both;
 }
 .code-panel i:nth-child(even) { margin-left: 12px; width: 65%; }
-.code-panel i:nth-child(2) { animation-delay: -2.55s; }
-.code-panel i:nth-child(3) { animation-delay: -2.1s; width: 75%; }
-.code-panel i:nth-child(4) { animation-delay: -1.65s; }
-.code-panel i:nth-child(5) { animation-delay: -1.2s; width: 50%; }
-.code-panel i:nth-child(6) { animation-delay: -.75s; }
-.code-panel-secondary i { animation-duration: 10s; }
+.code-panel i:nth-child(2) { animation-name: code-writing-2; }
+.code-panel i:nth-child(3) { animation-name: code-writing-3; width: 75%; }
+.code-panel i:nth-child(4) { animation-name: code-writing-4; }
+.code-panel i:nth-child(5) { animation-name: code-writing-5; width: 50%; }
+.code-panel i:nth-child(6) { animation-name: code-writing-6; }
+.code-panel-secondary i { animation-duration: 15s; }
 
-@keyframes code-writing {
-    0%, 5% { clip-path: inset(0 100% 0 0); }
-    30%, 75% { clip-path: inset(0); }
-    100% { clip-path: inset(0 100% 0 0); }
+/* Cada linha termina antes da próxima. O quadro completo pausa e desaparece junto. */
+@keyframes code-writing-1 {
+    0%, 5% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    13%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes code-writing-2 {
+    0%, 15% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    23%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes code-writing-3 {
+    0%, 25% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    33%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes code-writing-4 {
+    0%, 35% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    43%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes code-writing-5 {
+    0%, 45% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    53%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes code-writing-6 {
+    0%, 55% { clip-path: inset(0 100% 0 0); opacity: .35; }
+    63%, 85% { clip-path: inset(0); opacity: .35; }
+    95%, 100% { clip-path: inset(0); opacity: 0; }
 }
 
 @keyframes binary-fall {
@@ -1240,11 +1267,15 @@ section {
 @media (max-width: 768px) {
     .hero-code { opacity: .65; }
     .binary-stream { font-size: calc(var(--size, 13px) * .85); }
-    .binary-stream:nth-child(3n) { display: none; }
+    .binary-stream:nth-child(even) { display: none; }
     .code-braces { left: 3%; }
     .code-tags { right: 3%; }
     .code-panel { left: 3%; top: 38%; }
     .code-panel-secondary { top: auto; left: auto; right: 3%; bottom: 9%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .code-panel i { clip-path: none; opacity: .35; }
 }
 
 .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
