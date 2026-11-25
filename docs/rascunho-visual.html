@@ -27,8 +27,39 @@
         .icon-react { color: #83e1ff; background: #193c51; font-size: 20px; }
         .sobre-content { border-left: 2px solid #9b70f3; padding: 0 0 0 clamp(18px, 4vw, 48px); }
         .sobre-content .text-justify { text-align: left; }
-        .timeline-card, .skill-group, .project-card { background: linear-gradient(145deg, #211a30, #15141d 65%); border: 1px solid #533e70; }
-        .skill-group { border-top: 3px solid #9670e2; }
+        .timeline-card, .project-card { background: linear-gradient(145deg, #211a30, #15141d 65%); border: 1px solid #533e70; }
+        .skills-container {
+            display: block;
+            max-width: 960px;
+            margin-inline: auto;
+        }
+        .skill-group {
+            display: grid;
+            grid-template-columns: minmax(170px, 1fr) 2.4fr;
+            align-items: baseline;
+            gap: 12px 40px;
+            padding: 22px 0;
+            border-top: 1px solid #39313f;
+        }
+        .skill-group h3 { margin: 0; color: #cfb6ff; font-size: 1rem; }
+        .skill-tags { gap: 5px 0; }
+        .skill-tags .tag {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #e2dce8;
+            font-size: .94rem;
+            line-height: 1.7;
+            transform: none;
+        }
+        .skill-tags .tag:not(:last-child)::after {
+            content: "·";
+            margin-inline: 9px;
+            color: #a68abf;
+        }
+        @media (max-width: 620px) {
+            .skill-group { grid-template-columns: 1fr; gap: 7px; padding: 18px 0; }
+        }
         .timeline-period { font-variant-numeric: tabular-nums; }
         .project-card { display: flex; flex-direction: column; }
         .project-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; }
@@ -287,7 +318,7 @@
                     </div>
 
                     <div class="skill-group">
-                        <h3>Mensageria & Cache & Teste & Outros</h3>
+                        <h3>Mensageria, testes e práticas</h3>
                         <div class="skill-tags">
                             <span class="tag">RabbitMQ</span>
                             <span class="tag">Redis</span>
@@ -303,7 +334,7 @@
                     </div>
 
                     <div class="skill-group">
-                        <h3>Soft Skills</h3>
+                        <h3>Competências pessoais</h3>
                         <div class="skill-tags">
                             <span class="tag">Trabalho em Equipe</span>
                             <span class="tag">Regra de Negócio</span>
