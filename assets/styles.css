@@ -1148,81 +1148,67 @@ section {
 /* Abertura animada, trajetória expansível e menu lateral */
 .hero-description { max-width: 42ch; }
 .hero { isolation: isolate; }
-/* Símbolos decorativos de programação ao fundo da abertura */
+/* Fluxos binários e símbolos decorativos de programação */
 .hero-code {
     position: absolute;
     inset: 0;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    color: var(--accent);
-    mask-image: linear-gradient(transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(transparent, black 16%, black 82%, transparent);
 }
+
+.binary-stream {
+    position: absolute;
+    top: 0;
+    left: var(--x);
+    display: flex;
+    flex-direction: column;
+    color: rgba(167, 139, 250, .1);
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+    animation: binary-fall var(--speed) linear var(--delay) infinite;
+}
+
+.binary-stream span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+    letter-spacing: 14px;
+}
+
+.binary-stream:nth-child(3n) { color: rgba(196, 181, 253, .15); }
+.binary-stream:nth-child(4n) { filter: blur(.6px); }
 
 .code-symbol {
     position: absolute;
-    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-    font-weight: 600;
-    font-size: clamp(26px, 3.5vw, 48px);
-    line-height: 1;
-    opacity: .16;
-    text-shadow: 0 0 30px rgba(139, 92, 246, .2);
-    animation: code-drift 9s ease-in-out infinite alternate;
+    font: 500 clamp(26px, 3vw, 42px)/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+    color: rgba(167, 139, 250, .22);
+    animation: code-float 8s ease-in-out infinite alternate;
 }
 
-.code-braces { top: 22%; left: 3%; rotate: -5deg; }
-.code-tags { top: 14%; right: 6%; rotate: 5deg; animation-delay: -7s; }
-.code-arrow { bottom: 17%; left: 5%; animation-delay: -4s; }
-.code-brackets { bottom: 12%; right: 6%; rotate: 4deg; animation-delay: -10s; }
+.code-braces { top: 18%; left: 8%; }
+.code-tags { top: 13%; right: 9%; animation-delay: -3s; }
+.code-arrow { bottom: 16%; left: 6%; animation-delay: -5s; }
+.code-brackets { bottom: 14%; right: 8%; animation-delay: -2s; }
+.code-close { top: 45%; left: 48%; animation-delay: -6s; }
 
-.code-lines {
-    position: absolute;
-    top: 32%;
-    left: -35px;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    width: 120px;
-    opacity: .12;
-    rotate: -3deg;
-    animation: code-drift 10s ease-in-out -5s infinite alternate;
+@keyframes binary-fall {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
 }
 
-.code-lines i {
-    display: block;
-    width: 80%;
-    height: 3px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--accent) 25%, transparent 25% 30%, var(--primary) 30% 70%, transparent 70% 75%, var(--accent) 75%);
-    animation: code-type 6s steps(18, end) infinite;
-}
-
-.code-lines i:nth-child(2n) { width: 55%; margin-left: 22px; }
-.code-lines i:nth-child(3) { width: 95%; margin-left: 22px; }
-.code-lines i:nth-child(2) { animation-delay: .3s; }
-.code-lines i:nth-child(3) { animation-delay: .6s; }
-.code-lines i:nth-child(4) { animation-delay: .9s; }
-.code-lines i:nth-child(5) { animation-delay: 1.2s; }
-.code-lines-bottom { top: auto; left: auto; bottom: 22%; right: -35px; rotate: 3deg; animation-delay: -11s; }
-
-@keyframes code-drift {
-    from { transform: translateY(16px); opacity: .12; }
-    to { transform: translateY(-20px); opacity: .24; }
-}
-
-@keyframes code-type {
-    0%, 10% { clip-path: inset(0 100% 0 0); }
-    45%, 80% { clip-path: inset(0); }
-    100% { clip-path: inset(0 100% 0 0); }
+@keyframes code-float {
+    from { transform: translateY(14px); opacity: .5; }
+    to { transform: translateY(-18px); opacity: 1; }
 }
 
 @media (max-width: 768px) {
     .hero-code { opacity: .65; }
-    .code-lines { width: 80px; }
-    .code-braces { top: 12%; left: 4%; }
-    .code-tags { top: 10%; right: 4%; }
-    .code-arrow { bottom: 9%; left: 4%; }
-    .code-brackets { bottom: 8%; right: 4%; }
+    .binary-stream { font-size: 11px; }
+    .binary-stream:nth-child(even) { display: none; }
+    .code-braces { left: 3%; }
+    .code-tags { right: 3%; }
+    .code-close { left: auto; right: 3%; top: 48%; }
 }
 
 .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
