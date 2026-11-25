@@ -161,13 +161,13 @@
                     <h2 class="section-title">Jornada Profissional</h2>
                 </div>
                 <div class="timeline-compact">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-year="2026">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <span class="timeline-period">Out/2026 – atual</span>
                             <h3>Analista de Desenvolvimento de Software</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvimento de sistemas internos, integrações com o Protheus e evolução do LoadFlow, aplicativo Android em uso na expedição.</p>
+                            <button class="btn-expand" onclick="openModal('modal-analista')">Ver detalhes →</button>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -176,28 +176,26 @@
                             <span class="timeline-period">Fev/2026 – set/2026</span>
                             <h3>Desenvolvedora ADVPL / Assistente de TI III</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Customizações no TOTVS Protheus, integração via APIs REST e apoio às áreas de negócio.</p>
+                            <button class="btn-expand" onclick="openModal('modal-ti-iii')">Ver detalhes →</button>
 
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-year="2025">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <span class="timeline-period">Mar/2025 – fev/2026</span>
                             <h3>Desenvolvedora ADVPL / Assistente de TI II</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvimento e manutenção de rotinas ADVPL, consultas SQL e suporte à implantação de sistemas.</p>
 
                         <button class="btn-expand" onclick="openModal('modal-assistente-ti')">Ver detalhes →</button>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-year="2023">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <span class="timeline-period">Jan/2023 – fev/2025</span>
                             <h3>Auxiliar de E-commerce I, II e III</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Cadastro de produtos, atendimento e campanhas de e-commerce, com apoio a relatórios em SQL e à implantação do Protheus.</p>
 
                         <button class="btn-expand" onclick="openModal('modal-ecommerce-iii')">Ver detalhes →</button>
                         </div>
@@ -596,6 +594,43 @@
     </footer>
 
     <!-- Modals -->
+    <div id="modal-analista" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-analista')">&times;</span>
+            <h3>Analista de Desenvolvimento de Software</h3>
+            <p class="modal-company">Sportive Indústria e Comércio</p>
+            <p class="modal-period">Out/2026 – atual</p>
+            <ul class="modal-list">
+                <li>Desenvolvimento de sistemas internos em Java e Kotlin</li>
+                <li>Desenvolvimento e manutenção de rotinas ADVPL e regras de negócio</li>
+                <li>Criação e consumo de APIs REST no Protheus</li>
+                <li>Investigação e correção de problemas em aplicações</li>
+                <li>Uso de IA e BMAD no desenvolvimento e na documentação</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-ti-iii" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-ti-iii')">&times;</span>
+            <h3>Desenvolvedora ADVPL / Assistente de TI III</h3>
+            <p class="modal-company">Sportive Indústria e Comércio</p>
+            <p class="modal-period">Fev/2026 – set/2026</p>
+            <ul class="modal-list">
+                <li>Desenvolvimento de scripts SQL em SQL Server, Oracle e Firebird</li>
+                <li>Modelagem e estruturação de banco de dados</li>
+                <li>Implementação do sistema WMS SaaS</li>
+                <li>Customizações no TOTVS Protheus (ADVPL)</li>
+                <li>Suporte técnico e manutenção de infraestrutura</li>
+                <li>Treinamentos em TOTVS Protheus e WMS SaaS</li>
+                <li>Migração e saneamento de dados</li>
+                <li>Integração com APIs REST utilizando Postman</li>
+                <li>Automação com Power Query</li>
+            </ul>
+        </div>
+    </div>
+
+
     <div id="modal-assistente-ti" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('modal-assistente-ti')">&times;</span>
