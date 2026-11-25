@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Júlia Helena Ferreira - Desenvolvedora de software com experiência em ADVPL, Java, Android e APIs REST">
-    <title>Júlia Helena Ferreira | Desenvolvedora de Software</title>
+    <meta name="description" content="Júlia Helena Ferreira - Desenvolvedora Java Backend especializada em APIs REST, Spring Boot e sistemas corporativos">
+    <title>Júlia Helena Ferreira | Desenvolvedora Java Backend</title>
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,22 +58,38 @@
         <section id="home" class="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <span class="hero-tag">Desenvolvedora de Software</span>
+                    <span class="hero-tag">Desenvolvedora Backend</span>
                     <h1 class="hero-title">
                         Olá, eu sou<br>
                         <span class="gradient-text">Júlia Helena</span>
                     </h1>
-                    <p class="hero-description">Desenvolvedora de Software | ADVPL &amp; TOTVS Protheus | Java &amp; Spring Boot | APIs REST | SQL | IA agêntica aplicada ao desenvolvimento</p>
+                    <p class="hero-description">
+                        Especializada em desenvolvimento de sistemas corporativos, APIs REST e integração de dados. 
+                        Focada em entregar soluções robustas com qualidade e boas práticas.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Projetos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Tecnologias</span>
+                        </div>
+                    </div>
                     <div class="hero-buttons">
                         <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-                        <a href="assets/docs/Curriculo.pdf" class="btn btn-outline" download>Baixar currículo</a>
-                        <a href="#sobre" class="btn btn-outline">Ver mais do currículo</a>
+                        <a href="#contato" class="btn btn-outline">Entre em Contato</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="image-container">
                         <div class="image-placeholder">
-                            <span><img width="450" src="assets/img/eu.jpeg" alt="Júlia Helena Ferreira"></span>
+                            <span><img width="450" src="assets/img/eu.jpeg" alt="eu"></span>
                         </div>
                         <div class="floating-card card-1">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -87,11 +103,6 @@
                             </svg>
                             <span>Spring Boot</span>
                         </div>
-                        <div class="floating-card card-kotlin"><span class="tech-icon" aria-hidden="true">K</span> Kotlin</div>
-                        <div class="floating-card card-compose"><span class="tech-icon" aria-hidden="true">◇</span> Jetpack Compose</div>
-                        <div class="floating-card card-advpl"><span class="tech-icon" aria-hidden="true">&lt;/&gt;</span> ADVPL</div>
-                        <div class="floating-card card-js"><span class="tech-icon icon-js" aria-hidden="true">JS</span> JavaScript</div>
-                        <div class="floating-card card-react"><span class="tech-icon icon-react" aria-hidden="true">⚛</span> React</div>
                     </div>
                 </div>
             </div>
@@ -106,7 +117,7 @@
                 </div>
                 <div class="sobre-content">
                     <p class="text-highlight">
-                        Atuo na Sportive com desenvolvimento de sistemas corporativos, aplicativos Android e integrações. Conduzi com autonomia o setor de implantação de sistemas e inovação.
+                        Desenvolvedora Backend Java em constante evolução, com sólida experiência em sistemas corporativos, bancos de dados e integrações.
                     </p>
                     <p class="text-justify">
                         Sou formada em Análise e Desenvolvimento de Sistemas e atuo na área de Tecnologia da Informação, com experiência em implantação, sustentação e desenvolvimento de sistemas corporativos.
@@ -129,47 +140,48 @@
                     <h2 class="section-title">Jornada Profissional</h2>
                 </div>
                 <div class="timeline-compact">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-year="2025">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
-                            <span class="timeline-period">Out/2026 – atual</span>
-                            <h3>Analista de Desenvolvimento de Software</h3>
+                            <span class="timeline-period">Abr/2025 - Presente</span>
+                            <h3>Assistente de TI II</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvimento de sistemas internos, integrações com o Protheus e evolução do LoadFlow, aplicativo Android em uso na expedição.</p>
+                            <button class="btn-expand" onclick="openModal('modal-assistente-ti')">
+                                Ver detalhes →
+                            </button>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="timeline-period">Fev/2026 – set/2026</span>
-                            <h3>Desenvolvedora ADVPL / Assistente de TI III</h3>
-                            <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Customizações no TOTVS Protheus, integração via APIs REST e apoio às áreas de negócio.</p>
 
+                    <div class="timeline-item" data-year="2024">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-period">Jun/2024 - Abr/2025</span>
+                            <h3>Auxiliar de E-Commerce III</h3>
+                            <p class="company">Sportive Indústria e Comércio</p>
+                            <button class="btn-expand" onclick="openModal('modal-ecommerce-iii')">
+                                Ver detalhes →
+                            </button>
                         </div>
                     </div>
+
+                    <div class="timeline-item" data-year="2023">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-period">Set/2023 - Mai/2024</span>
+                            <h3>Auxiliar de E-Commerce II</h3>
+                            <p class="company">Sportive Indústria e Comércio</p>
+                        </div>
+                    </div>
+
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
-                            <span class="timeline-period">Mar/2025 – fev/2026</span>
-                            <h3>Desenvolvedora ADVPL / Assistente de TI II</h3>
+                            <span class="timeline-period">Jan/2023 - Ago/2023</span>
+                            <h3>Auxiliar de E-Commerce I</h3>
                             <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Desenvolvimento e manutenção de rotinas ADVPL, consultas SQL e suporte à implantação de sistemas.</p>
-
-                        <button class="btn-expand" onclick="openModal('modal-assistente-ti')">Ver detalhes →</button>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="timeline-period">Jan/2023 – fev/2025</span>
-                            <h3>Auxiliar de E-commerce I, II e III</h3>
-                            <p class="company">Sportive Indústria e Comércio</p>
-                            <p>Cadastro de produtos, atendimento e campanhas de e-commerce, com apoio a relatórios em SQL e à implantação do Protheus.</p>
 
-                        <button class="btn-expand" onclick="openModal('modal-ecommerce-iii')">Ver detalhes →</button>
-                        </div>
-                    </div>
                     <div class="timeline-item" data-year="2022">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
@@ -212,19 +224,15 @@
                     </div>
 
                     <div class="skill-group">
-                        <h3>Android e Web</h3>
+                        <h3>FrontEnd & Framework</h3>
                         <div class="skill-tags">
-                            <span class="tag">Kotlin</span>
-                            <span class="tag">Android</span>
-                            <span class="tag">Jetpack Compose</span>
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
-                            <span class="tag">React</span>
                             <span class="tag">Photoshop</span>
                         </div>
                     </div>
-
+                    
                     <div class="skill-group">
                         <h3>Banco de Dados</h3>
                         <div class="skill-tags">
@@ -291,30 +299,6 @@
                     <h2 class="section-title">Projetos em Destaque</h2>
                 </div>
                 <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3>Controle de estoque de matéria-prima</h3>
-                            <div class="project-tags">
-                                <span>Java 21</span><span>Spring Boot</span><span>Oracle</span><span>JPA/Hibernate</span><span>Flyway</span>
-                            </div>
-                        </div>
-                        <p class="project-desc">Sistema para cadastrar produtos e matérias-primas, controlar o estoque e consultar o que pode ser produzido com os insumos disponíveis.</p>
-                        <div class="project-tech">
-                            <a href="https://github.com/JuliaHFerreira/raw-material-front-end" class="project-link">Front-end ↗</a>
-                            <a href="https://github.com/JuliaHFerreira/raw-material-control-system" class="project-link">Back-end ↗</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3>LoadFlow</h3>
-                            <p class="project-desc">Em uso na Sportive</p>
-                            <div class="project-tags" aria-label="Tecnologias do LoadFlow">
-                                <span>Kotlin</span><span>Android</span><span>Jetpack Compose</span><span>Material 3</span><span>APIs REST</span><span>OkHttp</span><span>Moshi</span>
-                            </div>
-                        </div>
-                        <p class="project-desc">Desenvolvi um WMS Android para a expedição consultar estoque e registrar movimentações em coletores de dados. O aplicativo lê códigos de barras e se integra ao Protheus via APIs REST.</p>
-                        <p>Em desenvolvimento: fusão e divisão de paletes e saída simplificada.</p>
-                    </article>
                     <article class="project-card">
                         <div class="project-header">
                             <h3>Microservices Study</h3>
@@ -441,8 +425,8 @@
                             </svg>
                         </div>
                         <h3>Análise e Desenvolvimento de Sistemas</h3>
-                        <p class="edu-institution">Universidade Cesumar - UniCesumar</p>
-                        <p class="edu-period">Jul/2023 - Dez/2025</p>
+                        <p class="edu-institution">Univercidade Cesumar - UniCesumar</p>
+                        <p class="edu-period">Jul/2023 - Fev/2026</p>
                         <span class="edu-badge">Superior</span>
                     </div>
 
@@ -478,7 +462,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h3>Inglês básico (N2)</h3>
+                        <h3>Inglês Intermediário</h3>
                         <p class="edu-institution">Hello! Inglês Personalizado</p>
                         <p class="edu-period">Cursando</p>
                         <span class="edu-badge">Idioma</span>
@@ -495,7 +479,7 @@
                     <h2 class="section-title">Entre em Contato</h2>
                 </div>
                 <p class="contato-intro">
-                    Quer conversar sobre desenvolvimento de software, integrações ou projetos?
+                    Estou em busca de oportunidades como Desenvolvedora Java Júnior. Vamos conversar?
                 </p>
                 <div class="contact-grid">
                     <a href="mailto:juliahferreira317@gmail.com" class="contact-item">
@@ -557,9 +541,9 @@
     <div id="modal-assistente-ti" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('modal-assistente-ti')">&times;</span>
-            <h3>Desenvolvedora ADVPL / Assistente de TI II</h3>
+            <h3>Assistente de TI II</h3>
             <p class="modal-company">Sportive Indústria e Comércio</p>
-            <p class="modal-period">Mar/2025 – fev/2026</p>
+            <p class="modal-period">Abril/2025 - Presente</p>
             <ul class="modal-list">
                 <li>Desenvolvimento de scripts SQL em SQL Server, Oracle e Firebird</li>
                 <li>Modelagem e estruturação de banco de dados</li>
@@ -577,9 +561,9 @@
     <div id="modal-ecommerce-iii" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('modal-ecommerce-iii')">&times;</span>
-            <h3>Auxiliar de E-commerce I, II e III</h3>
+            <h3>Auxiliar de E-Commerce III</h3>
             <p class="modal-company">Sportive Indústria e Comércio</p>
-            <p class="modal-period">Jan/2023 – fev/2025</p>
+            <p class="modal-period">Junho/2024 - Abril/2025</p>
             <ul class="modal-list">
                 <li>Fotografia, edição e cadastro de produtos no ERP ATON (Ambarx)</li>
                 <li>Atendimento via chat em Mercado Livre, Shopee e Magalu</li>
