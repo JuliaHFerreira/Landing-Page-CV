@@ -66,6 +66,17 @@
     @keyframes scroll-hint {
         50% { transform: translateY(5px) rotate(45deg); }
     }
+    .earlier-experiences.is-collapsed {
+        max-height: 160px;
+        overflow: hidden;
+        filter: blur(4px);
+        opacity: .45;
+        pointer-events: none;
+        user-select: none;
+        mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+    }
+    .experience-actions { text-align: center; margin-top: 12px; }
+    .experience-actions[hidden] { display: none; }
     </style>
 </head>
 <body>
@@ -216,6 +227,7 @@
                         <button class="btn-expand" onclick="openModal('modal-assistente-ti')">Ver detalhes →</button>
                         </div>
                     </div>
+                    <div id="experiencias-anteriores" class="earlier-experiences">
                     <div class="timeline-item" data-year="2023">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
@@ -243,6 +255,11 @@
                             <p class="company">Maxsoy Alimentos Ltda</p>
                         </div>
                     </div>
+                    </div>
+                </div>
+                <div class="experience-actions" hidden>
+                    <button type="button" class="btn btn-outline" id="toggleExperiences"
+                        aria-expanded="false" aria-controls="experiencias-anteriores">Ver mais experiências</button>
                 </div>
             </div>
         </section>
@@ -701,6 +718,23 @@
     </div>
 
     <script>
+        const earlierExperiences = document.getElementById('experiencias-anteriores');
+        const toggleExperiences = document.getElementById('toggleExperiences');
+        earlierExperiences.classList.add('is-collapsed');
+        earlierExperiences.inert = true;
+        earlierExperiences.setAttribute('aria-hidden', 'true');
+        toggleExperiences.parentElement.hidden = false;
+        toggleExperiences.addEventListener('click', () => {
+            const expanded = toggleExperiences.getAttribute('aria-expanded') === 'true';
+            toggleExperiences.setAttribute('aria-expanded', String(!expanded));
+            earlierExperiences.classList.toggle('is-collapsed', expanded);
+            earlierExperiences.inert = expanded;
+            earlierExperiences.setAttribute('aria-hidden', String(expanded));
+            toggleExperiences.textContent = expanded ? 'Ver mais experiências' : 'Ver menos experiências';
+            if (expanded) {
+                document.getElementById('experiencia').scrollIntoView({ block: 'start' });
+            }
+        });
         const badges = [...document.querySelectorAll('.hero-image .floating-card')];
         const positions = badges.map(badge => badge.classList[1]);
         for (let i = positions.length - 1; i > 0; i--) {
