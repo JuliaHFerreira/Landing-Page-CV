@@ -172,3 +172,47 @@ console.log('%c🚀 Desenvolvido com HTML5, CSS3 e JavaScript',
     'color: #a78bfa; font-size: 14px; padding: 5px;');
 console.log('%c💜 Procurando oportunidades como Dev Java Júnior!', 
     'color: #c4b5fd; font-size: 14px; padding: 5px;');
+
+const earlierExperiences = document.getElementById('experiencias-anteriores');
+const toggleExperiences = document.getElementById('toggleExperiences');
+earlierExperiences.classList.add('is-collapsed');
+earlierExperiences.inert = true;
+earlierExperiences.setAttribute('aria-hidden', 'true');
+toggleExperiences.parentElement.hidden = false;
+toggleExperiences.addEventListener('click', () => {
+    const expanded = toggleExperiences.getAttribute('aria-expanded') === 'true';
+    toggleExperiences.setAttribute('aria-expanded', String(!expanded));
+    earlierExperiences.classList.toggle('is-collapsed', expanded);
+    earlierExperiences.inert = expanded;
+    earlierExperiences.setAttribute('aria-hidden', String(expanded));
+    toggleExperiences.textContent = expanded ? 'Ver mais experiências' : 'Ver menos experiências';
+    if (expanded) {
+        document.getElementById('experiencia').scrollIntoView({ block: 'start' });
+    }
+});
+const badges = [...document.querySelectorAll('.hero-image .floating-card')];
+const positions = badges.map(badge => badge.classList[1]);
+for (let i = positions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [positions[i], positions[j]] = [positions[j], positions[i]];
+}
+badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positions[i]));
+
+function syncMenuState() {
+    const open = sideMenu.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', String(open));
+    sideMenu.inert = !open;
+    if (open) closeMenu.focus();
+}
+syncMenuState();
+hamburger.addEventListener('click', syncMenuState);
+closeMenu.addEventListener('click', () => {
+    syncMenuState();
+    hamburger.focus();
+});
+navLinks.forEach(link => link.addEventListener('click', syncMenuState));
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && sideMenu.classList.contains('active')) {
+        closeMenu.click();
+    }
+});
