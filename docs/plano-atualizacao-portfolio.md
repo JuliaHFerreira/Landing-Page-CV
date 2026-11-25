@@ -36,7 +36,13 @@ Formação em Análise e Desenvolvimento de Sistemas pela UniCesumar, concluída
 
 ## Direção proposta para o site
 
-1. **Apresentação.** Mostrar o cargo atual, um resumo curto e links diretos para o LoadFlow e o currículo. As datas de experiência ficam na trajetória. O topo fica sem contador ou frase sobre tempo de empresa e de atuação técnica.
+### Frase aprovada para a abertura
+
+> Desenvolvedora de Software | ADVPL & TOTVS Protheus | Java & Spring Boot | APIs REST | SQL | IA agêntica aplicada ao desenvolvimento
+
+Exibir a frase logo abaixo de **Júlia Helena Ferreira**. O cargo **Analista de Desenvolvimento de Software** fica na trajetória da Sportive.
+
+1. **Apresentação.** Mostrar o nome, a frase aprovada e links diretos para o LoadFlow e o currículo. As datas de experiência ficam na trajetória.
 2. **Foto e tecnologias.** Exibir Java, Kotlin, Spring Boot, Android, Jetpack Compose, ADVPL, TOTVS Protheus, APIs REST e SQL em etiquetas fixas. No desktop, elas ficam junto à foto. No celular, passam para baixo dela.
 3. **Projetos.** Colocar o LoadFlow em destaque logo após a apresentação, com o status **Em uso na Sportive** e um texto curto sobre as funcionalidades em desenvolvimento.
 4. **Trajetória e habilidades.** Usar uma linha do tempo com as datas confirmadas. Organizar as competências em grupos como backend, Android, ERP e integrações, dados, testes e entrega, e IA aplicada ao desenvolvimento.
