@@ -40,6 +40,32 @@
     .timeline-item, .project-card, .education-card, .skill-group { opacity: 1 !important; transform: none !important; }
 }
     .project-link:disabled { visibility: hidden; }
+    .hero { padding-bottom: 100px; }
+    .hero-more {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 13px;
+    }
+    .hero-more::after {
+        content: "";
+        width: 13px;
+        height: 13px;
+        border-right: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+        transform: rotate(45deg);
+        animation: scroll-hint 2s ease-in-out infinite;
+    }
+    @keyframes scroll-hint {
+        50% { transform: translateY(5px) rotate(45deg); }
+    }
     </style>
 </head>
 <body>
@@ -99,7 +125,6 @@
                     <div class="hero-buttons">
                         <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
                         <a href="../assets/docs/Curriculo.pdf" class="btn btn-outline" download>Baixar currículo</a>
-                        <a href="#sobre" class="btn btn-outline">Ver mais do currículo</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -127,6 +152,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#sobre" class="hero-more">Ver mais</a>
         </section>
 
         <!-- Sobre Section -->
