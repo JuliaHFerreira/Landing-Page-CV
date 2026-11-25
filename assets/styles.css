@@ -1353,24 +1353,47 @@ section {
         50% { transform: translateY(-4px); }
     }
 
-    .formacao, .contato {
+    .habilidades, .formacao, .contato {
         padding-block: 32px;
     }
 
-    .formacao .section-header, .contato .section-header {
+    .habilidades .section-header, .formacao .section-header, .contato .section-header {
         margin-bottom: 16px;
     }
 
-    .formacao .section-tag, .contato .section-tag {
+    .habilidades .section-tag, .formacao .section-tag, .contato .section-tag {
         margin-bottom: 6px;
     }
 
-    .formacao .section-title, .contato .section-title {
+    .habilidades .section-title, .formacao .section-title, .contato .section-title {
         margin-bottom: 0;
     }
 
-    .education-grid, .contact-grid {
+    .skills-container, .education-grid, .contact-grid {
         gap: 8px;
+    }
+
+    .skill-group {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .skill-group h3 {
+        gap: 8px;
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .skill-group h3::before {
+        height: 16px;
+    }
+
+    .skill-tags {
+        gap: 4px;
+    }
+
+    .skill-tags .tag {
+        padding: 3px 7px;
     }
 
     .education-card {
