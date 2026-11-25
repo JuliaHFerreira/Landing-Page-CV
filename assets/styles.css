@@ -1353,23 +1353,23 @@ section {
         50% { transform: translateY(-4px); }
     }
 
-    .habilidades, .formacao, .contato {
+    .habilidades, .projetos, .formacao, .contato {
         padding-block: 32px;
     }
 
-    .habilidades .section-header, .formacao .section-header, .contato .section-header {
+    :is(.habilidades, .projetos, .formacao, .contato) .section-header {
         margin-bottom: 16px;
     }
 
-    .habilidades .section-tag, .formacao .section-tag, .contato .section-tag {
+    :is(.habilidades, .projetos, .formacao, .contato) .section-tag {
         margin-bottom: 6px;
     }
 
-    .habilidades .section-title, .formacao .section-title, .contato .section-title {
+    :is(.habilidades, .projetos, .formacao, .contato) .section-title {
         margin-bottom: 0;
     }
 
-    .skills-container, .education-grid, .contact-grid {
+    .skills-container, .projects-grid, .education-grid, .contact-grid {
         gap: 8px;
     }
 
@@ -1394,6 +1394,57 @@ section {
 
     .skill-tags .tag {
         padding: 3px 7px;
+    }
+
+    .project-card {
+        min-width: 0;
+        padding: 14px;
+    }
+
+    .project-header h3 {
+        margin-bottom: 6px;
+        font-size: 17px;
+        line-height: 1.3;
+    }
+
+    .project-tags {
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    .project-tags span {
+        padding: 2px 7px;
+    }
+
+    .project-desc {
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+
+    .project-tech {
+        gap: 4px 10px;
+        margin-bottom: 4px;
+        padding-top: 6px;
+    }
+
+    .project-tech:last-child {
+        margin-bottom: 0;
+    }
+
+    .in-progress {
+        margin-block: 4px 8px;
+        text-align: left;
+    }
+
+    .project-card a.project-link {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        min-height: 44px;
+    }
+
+    .project-link:disabled {
+        display: none;
     }
 
     .education-card {
