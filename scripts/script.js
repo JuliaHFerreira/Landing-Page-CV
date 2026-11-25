@@ -191,32 +191,10 @@ toggleExperiences.addEventListener('click', () => {
     }
 });
 
-const skillsGrid = document.getElementById('lista-habilidades');
-const toggleSkills = document.getElementById('toggleSkills');
-const skillPreview = skillsGrid.children[2];
-const mobileViewport = window.matchMedia('(max-width: 768px)');
-
-function syncSkillPreview() {
-    skillPreview.inert = mobileViewport.matches && skillsGrid.classList.contains('is-collapsed');
-}
-
-skillsGrid.classList.add('is-collapsed');
-toggleSkills.parentElement.hidden = false;
-syncSkillPreview();
-mobileViewport.addEventListener('change', syncSkillPreview);
-toggleSkills.addEventListener('click', () => {
-    const collapsed = skillsGrid.classList.toggle('is-collapsed');
-    syncSkillPreview();
-    toggleSkills.setAttribute('aria-expanded', String(!collapsed));
-    toggleSkills.textContent = collapsed ? 'Ver mais habilidades' : 'Ver menos habilidades';
-    if (collapsed) {
-        toggleSkills.scrollIntoView({ block: 'center' });
-    }
-});
-
 const projectsGrid = document.getElementById('lista-projetos');
 const toggleProjects = document.getElementById('toggleProjects');
 const projectPreview = projectsGrid.children[2];
+const mobileViewport = window.matchMedia('(max-width: 768px)');
 
 function syncProjectPreview() {
     projectPreview.inert = mobileViewport.matches && projectsGrid.classList.contains('is-collapsed');
