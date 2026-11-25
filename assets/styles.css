@@ -1090,3 +1090,34 @@ section {
         width: 280px;
     }
 }
+
+/* Abertura animada do portfólio */
+.hero-description { max-width: 42ch; }
+.hero { isolation: isolate; }
+.hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
+@keyframes glow-drift { to { transform: translate(-8%, 8%) scale(1.12); } }
+.hero-image { padding-inline: 20px; }
+.floating-card.card-1 { right: -14px; }
+.floating-card.card-2 { left: -14px; }
+.card-kotlin { top: 13%; left: -12px; animation: floatCard 7s ease-in-out -2s infinite; }
+.card-compose { right: -12px; bottom: 22%; animation: floatCard 7s ease-in-out -4s infinite; }
+.card-advpl { right: 12%; bottom: -14px; animation: floatCard 8s ease-in-out -1s infinite; }
+.card-js { left: -18px; top: 43%; animation: floatCard 7s ease-in-out -3s infinite; }
+.card-react { right: -18px; top: 40%; animation: floatCard 8s ease-in-out -5s infinite; }
+.tech-icon { width: 21px; height: 21px; display: inline-grid; place-items: center; border-radius: 5px; color: #e4d6ff; background: #4a3071; font: 700 12px/1 system-ui, sans-serif; flex: none; }
+.icon-js { color: #211800; background: #f4d34d; }
+.icon-react { color: #83e1ff; background: #193c51; font-size: 20px; }
+.hero .btn-outline { color: #c7abfb; }
+:focus-visible { outline: 2px solid #c7abfb; outline-offset: 4px; }
+@media (max-width: 480px) {
+    .image-container { margin-bottom: 26px; }
+    .floating-card { font-size: .69rem; padding: 7px 9px; }
+    .card-kotlin { top: 12%; left: -8px; }
+    .card-compose { right: -8px; }
+    .card-js { left: -8px; }
+    .card-react { right: -8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .timeline-item, .project-card, .education-card, .skill-group { opacity: 1 !important; transform: none !important; }
+}
