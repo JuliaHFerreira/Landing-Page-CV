@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prévia visual · Júlia Helena Ferreira</title>
+    <style>
+        :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #100e16; color: #f8f5fc; }
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        a { color: inherit; }
+        :focus-visible { outline: 3px solid #d9c6ff; outline-offset: 5px; }
+        .wrap { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
+        header { border-bottom: 1px solid #342b40; }
+        header .wrap { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        header strong { color: #d9c6ff; }
+        nav { display: flex; flex-wrap: wrap; gap: 16px; }
+        nav a { text-decoration: none; }
+        .hero { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: clamp(32px, 7vw, 100px); padding-block: clamp(38px, 7vw, 85px); }
+        h1, h2 { font-family: Georgia, serif; line-height: 1.05; margin: 0; }
+        h1 { font-size: clamp(2.7rem, 6vw, 5.5rem); letter-spacing: -.045em; }
+        h2 { font-size: clamp(2.2rem, 5vw, 4.1rem); }
+        p { line-height: 1.65; color: #d9d0e3; }
+        .intro { max-width: 54ch; font-size: 1.075rem; }
+        .actions, .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .actions { margin-top: 25px; }
+        .actions a { padding: 12px 17px; border: 1px solid #75628d; border-radius: 8px; text-decoration: none; font-weight: 650; transition: background-color 150ms; }
+        .actions a:first-child { background: #d9c6ff; color: #221238; }
+        .actions a:hover { background: #bca1ef; color: #221238; }
+        figure { margin: 0; }
+        img { display: block; width: 100%; max-height: 360px; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; border-radius: 16px; }
+        .tags { list-style: none; padding: 0; margin: 15px 0 0; gap: 7px; }
+        .tags li { font-size: .85rem; padding: 5px 9px; border: 1px solid #534461; border-radius: 7px; color: #e3d7f2; }
+        .feature { margin-bottom: 45px; border: 1px solid #58446c; border-radius: 16px; background: #20172b; padding: clamp(23px, 5vw, 56px); display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(12px, 4vw, 50px); }
+        .feature p { margin-bottom: 0; }
+        .status { display: inline-block; color: #e2d2ff; font-size: .9rem; margin-bottom: 14px; }
+        .section { padding-block: 30px; border-top: 1px solid #342b40; }
+        .section h2 { font-size: 2rem; }
+        @media (max-width: 768px) { .hero, .feature { grid-template-columns: 1fr; } figure { max-width: 480px; } }
+        @media (max-width: 480px) { .wrap { width: calc(100% - 32px); } nav { gap: 10px; font-size: .875rem; } }
+        @media (prefers-reduced-motion: reduce) { .actions a { transition: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <strong>JHF</strong>
+            <nav aria-label="Navegação principal">
+                <a href="#loadflow">Projetos</a>
+                <a href="#trajetoria">Trajetória</a>
+            </nav>
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="hero" aria-labelledby="nome">
+            <div>
+                <h1 id="nome">Júlia Helena Ferreira</h1>
+                <p class="intro">Desenvolvedora de Software | ADVPL &amp; TOTVS Protheus | Java &amp; Spring Boot | APIs REST | SQL | IA agêntica aplicada ao desenvolvimento</p>
+                <div class="actions">
+                    <a href="#loadflow">Ver o LoadFlow</a>
+                    <a href="../assets/docs/Curriculo.pdf" download>Baixar currículo</a>
+                </div>
+            </div>
+            <figure>
+                <img src="../assets/img/eu.jpeg" alt="Júlia Helena Ferreira">
+                <figcaption>
+                    <ul class="tags" aria-label="Tecnologias">
+                        <li>Java</li><li>Kotlin</li><li>Spring Boot</li><li>Android</li><li>Jetpack Compose</li><li>ADVPL</li><li>TOTVS Protheus</li><li>APIs REST</li><li>SQL</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </section>
+        <article class="feature" id="loadflow" aria-labelledby="projeto">
+            <div>
+                <span class="status">Em uso na Sportive</span>
+                <h2 id="projeto">LoadFlow</h2>
+                <p>WMS Android para a expedição</p>
+            </div>
+            <div>
+                <p>Desenvolvi o LoadFlow para a equipe consultar estoque e registrar movimentações com coletores de dados. O aplicativo lê códigos de barras e se integra ao TOTVS Protheus via APIs REST.</p>
+                <p><strong>Em desenvolvimento</strong> · Fusão e divisão de paletes e saída simplificada.</p>
+            </div>
+        </article>
+        <section class="section" id="trajetoria">
+            <h2>Trajetória profissional</h2>
+            <p><strong>Analista de Desenvolvimento de Software</strong> · Sportive · out/2026 – atual</p>
+            <p>Conduzi o setor de implantação de sistemas e inovação na Sportive.</p>
+        </section>
+    </main>
+</body>
+</html>
