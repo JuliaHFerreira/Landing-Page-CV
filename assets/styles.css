@@ -1199,6 +1199,25 @@ section {
     }
     .hamburger.active { visibility: hidden; pointer-events: none; }
     .close-menu:hover { transform: none; }
+@media (max-width: 768px) {
+    .hero-container { grid-template-columns: minmax(0, 1fr); }
+    .hero-content, .hero-image { min-width: 0; }
+    .hero-image { width: 100%; }
+    .hero-image .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .hero-image .image-placeholder { flex: 0 0 100%; margin-bottom: 16px; }
+    .hero-image .floating-card {
+        position: static;
+        inset: auto;
+        padding: 7px 9px;
+        font-size: 11px;
+        animation: none;
+    }
+}
     @media (prefers-reduced-motion: reduce) {
         .side-menu, .side-menu.active { transition: none; }
     }
