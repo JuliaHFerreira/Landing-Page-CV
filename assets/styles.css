@@ -548,29 +548,23 @@ section {
 }
 
 .sobre-content {
-    max-width: 800px;
+    max-width: 70ch;
     margin: 0 auto;
-}
-
-.text-highlight {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--accent);
-    margin-bottom: 25px;
-    line-height: 1.7;
-    text-align: justify;
-}
-
-.text-justify {
-    font-size: 15px;
-    margin-bottom: 25px;
-    text-align: justify;
-}
-
-.sobre-content p {
+    display: grid;
+    gap: 16px;
     color: var(--text-secondary);
-    margin-bottom: 20px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sobre-intro {
+    padding: 16px;
+    border-inline-start: 3px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: clamp(16px, 3vw, 18px);
+    font-weight: 500;
 }
 
 /* ========== EXPERIÊNCIA SECTION - COMPACTA ========== */
@@ -1362,11 +1356,11 @@ section {
         margin-bottom: 16px;
     }
 
-    :is(.habilidades, .projetos, .formacao, .contato) .section-tag {
+    :is(.sobre, .habilidades, .projetos, .formacao, .contato) .section-tag {
         margin-bottom: 6px;
     }
 
-    :is(.habilidades, .projetos, .formacao, .contato) .section-title {
+    :is(.sobre, .habilidades, .projetos, .formacao, .contato) .section-title {
         margin-bottom: 0;
     }
 
@@ -1374,11 +1368,11 @@ section {
         gap: 8px;
     }
 
-    .habilidades {
+    .sobre, .habilidades {
         padding-block: 40px;
     }
 
-    .habilidades .section-header {
+    .sobre .section-header, .habilidades .section-header {
         margin-bottom: 20px;
     }
 
