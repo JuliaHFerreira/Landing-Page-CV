@@ -1,33 +1,32 @@
 // Elementos
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('sideMenu');
-const closeMenu = document.getElementById('closeMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const header = document.getElementById('header');
 
-// Toggle Menu Hamburguer
-hamburger.addEventListener('click', () => {
-    sideMenu.classList.toggle('active');
-    document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
-});
+function setMenuOpen(open) {
+    sideMenu.classList.toggle('active', open);
+    sideMenu.inert = !open;
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+}
 
-// Fechar Menu
-closeMenu.addEventListener('click', () => {
-    sideMenu.classList.remove('active');
-    document.body.style.overflow = 'auto';
+setMenuOpen(false);
+hamburger.addEventListener('click', () => {
+    setMenuOpen(!sideMenu.classList.contains('active'));
 });
 
 // Fechar menu ao clicar em link
 navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
         // Remove active de todos
         navLinks.forEach(l => l.classList.remove('active'));
         // Adiciona active no clicado
         link.classList.add('active');
         
-        // Fecha menu mobile
-        sideMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        setMenuOpen(false);
+        hamburger.focus();
     });
 });
 
@@ -219,21 +218,9 @@ for (let i = positions.length - 1; i > 0; i--) {
 }
 badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positions[i]));
 
-function syncMenuState() {
-    const open = sideMenu.classList.contains('active');
-    hamburger.setAttribute('aria-expanded', String(open));
-    sideMenu.inert = !open;
-    if (open) closeMenu.focus();
-}
-syncMenuState();
-hamburger.addEventListener('click', syncMenuState);
-closeMenu.addEventListener('click', () => {
-    syncMenuState();
-    hamburger.focus();
-});
-navLinks.forEach(link => link.addEventListener('click', syncMenuState));
 document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && sideMenu.classList.contains('active')) {
-        closeMenu.click();
+        setMenuOpen(false);
+        hamburger.focus();
     }
 });

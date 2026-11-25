@@ -118,8 +118,10 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-    width: 30px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
+    padding: 10px 7px;
+    margin-inline-end: -7px;
     background: none;
     border: none;
     cursor: pointer;
@@ -141,8 +143,16 @@ body {
     background: var(--accent);
 }
 
-.hamburger[aria-expanded="true"] {
-    visibility: hidden;
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
 }
 
 /* Side Menu */
@@ -167,27 +177,6 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.close-menu {
-    position: absolute;
-    top: calc((var(--nav-height) - 44px) / 2);
-    right: calc(var(--nav-inset) - 7px);
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    font-size: 36px;
-    background: none;
-    border: none;
-    color: var(--primary);
-    cursor: pointer;
-    line-height: 1;
-    transition: var(--transition);
-}
-
-.close-menu:hover {
-    color: var(--accent);
 }
 
 .nav-list {
