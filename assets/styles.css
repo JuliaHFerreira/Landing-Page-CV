@@ -1192,6 +1192,8 @@ section {
 .code-tags { top: 13%; right: 9%; animation-delay: -3s; }
 .code-arrow { bottom: 16%; left: 6%; animation-delay: -5s; }
 .code-brackets { bottom: 14%; right: 8%; animation-delay: -2s; }
+.code-comment { top: 45%; left: 2%; font-size: 30px; }
+.code-equals { top: 42%; right: 3%; font-size: 30px; }
 
 .code-panel {
     position: absolute;
@@ -1205,6 +1207,7 @@ section {
 }
 
 .code-panel-secondary { top: auto; left: 48%; bottom: 12%; rotate: 8deg; animation-delay: -7s; animation-direction: alternate-reverse; }
+.code-panel-tertiary { top: 12%; left: 57%; rotate: 4deg; animation-delay: -9s; }
 .code-panel i {
     display: block;
     opacity: .35;
@@ -1221,6 +1224,7 @@ section {
 .code-panel i:nth-child(5) { animation-name: code-writing-5; width: 50%; }
 .code-panel i:nth-child(6) { animation-name: code-writing-6; }
 .code-panel-secondary i { animation-duration: 15s; }
+.code-panel-tertiary i { animation-duration: 14s; }
 
 /* Cada linha termina antes da próxima. O quadro completo pausa e desaparece junto. */
 @keyframes code-writing-1 {
@@ -1272,6 +1276,7 @@ section {
     .code-tags { right: 3%; }
     .code-panel { left: 3%; top: 38%; }
     .code-panel-secondary { top: auto; left: auto; right: 3%; bottom: 9%; }
+    .code-panel-tertiary { top: 8%; left: 40%; width: 90px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
