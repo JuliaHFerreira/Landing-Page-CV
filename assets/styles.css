@@ -1248,14 +1248,85 @@ section {
     .hamburger.active { visibility: hidden; pointer-events: none; }
     .close-menu:hover { transform: none; }
 @media (max-width: 768px) {
-    .hero-container { grid-template-columns: minmax(0, 1fr); }
+    .navbar {
+        height: 56px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 68px 0 10px;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 520px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(8px, 2svh, 18px);
+        padding-inline: 16px;
+    }
+
     .hero-content, .hero-image { min-width: 0; }
     .hero-image { width: 100%; }
     .hero-image .image-container {
         display: block;
-        margin-block: 28px;
+        width: clamp(112px, 26svh, 222px);
+        max-width: 100%;
+        margin-block: 16px;
     }
     .hero-image .image-placeholder { margin-bottom: 0; }
+
+    .hero-tag {
+        margin-bottom: 8px;
+        padding: 4px 12px;
+        font-size: 11px;
+    }
+
+    .hero-title {
+        margin-bottom: 8px;
+        font-size: clamp(28px, 4.5svh, 42px);
+    }
+
+    .hero-description {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .hero-buttons .btn {
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .hero-more {
+        position: relative;
+        inset: auto;
+        transform: none;
+        flex: none;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        gap: 3px;
+    }
+
+    .hero-more::after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .hero-tag, .hero-title, .hero-description, .hero-buttons {
+        animation: none;
+    }
+
     .hero-image .floating-card {
         position: absolute;
         inset: auto;
@@ -1280,6 +1351,92 @@ section {
     .hero-image .floating-card:nth-child(even) { animation-delay: -2.5s; }
     @keyframes mobile-float {
         50% { transform: translateY(-4px); }
+    }
+
+    .formacao, .contato {
+        padding-block: 32px;
+    }
+
+    .formacao .section-header, .contato .section-header {
+        margin-bottom: 16px;
+    }
+
+    .formacao .section-tag, .contato .section-tag {
+        margin-bottom: 6px;
+    }
+
+    .formacao .section-title, .contato .section-title {
+        margin-bottom: 0;
+    }
+
+    .education-grid, .contact-grid {
+        gap: 8px;
+    }
+
+    .education-card {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 12px;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .education-card > div {
+        grid-row: span 4;
+    }
+
+    .education-card svg {
+        display: block;
+        width: 28px;
+        height: 28px;
+    }
+
+    .education-card h3 {
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+
+    .edu-institution, .edu-period {
+        margin-bottom: 4px;
+    }
+
+    .edu-badge {
+        justify-self: start;
+        padding: 1px 8px;
+    }
+
+    .contato-intro {
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-item {
+        min-height: 44px;
+        gap: 6px;
+        padding: 8px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-item svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 650px) {
+    .hero-image .image-container {
+        width: clamp(92px, 22svh, 143px);
+    }
+
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
     @media (prefers-reduced-motion: reduce) {
