@@ -190,6 +190,20 @@ toggleExperiences.addEventListener('click', () => {
         document.getElementById('experiencia').scrollIntoView({ block: 'start' });
     }
 });
+
+const projectsGrid = document.getElementById('lista-projetos');
+const toggleProjects = document.getElementById('toggleProjects');
+projectsGrid.classList.add('is-collapsed');
+toggleProjects.parentElement.hidden = false;
+toggleProjects.addEventListener('click', () => {
+    const collapsed = projectsGrid.classList.toggle('is-collapsed');
+    toggleProjects.setAttribute('aria-expanded', String(!collapsed));
+    toggleProjects.textContent = collapsed ? 'Ver mais projetos' : 'Ver menos projetos';
+    if (collapsed) {
+        toggleProjects.scrollIntoView({ block: 'center' });
+    }
+});
+
 const badges = [...document.querySelectorAll('.hero-image .floating-card')];
 const positions = badges.map(badge => badge.classList[1]);
 for (let i = positions.length - 1; i > 0; i--) {
