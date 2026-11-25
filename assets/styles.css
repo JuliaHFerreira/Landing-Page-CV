@@ -1148,6 +1148,75 @@ section {
 /* Abertura animada, trajetória expansível e menu lateral */
 .hero-description { max-width: 42ch; }
 .hero { isolation: isolate; }
+.hero-network {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    perspective: 650px;
+    mask-image: linear-gradient(transparent, black 20%, black 85%, transparent);
+}
+
+.hero-network-grid {
+    position: absolute;
+    inset: -15% -40% -60%;
+    background-image:
+        linear-gradient(rgba(167, 139, 250, .14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167, 139, 250, .14) 1px, transparent 1px);
+    background-size: 72px 72px;
+    transform: rotateX(58deg);
+    transform-origin: center 65%;
+    animation: network-travel 16s linear infinite;
+}
+
+.hero-network-nodes {
+    position: absolute;
+    inset: -40px;
+    background-image:
+        radial-gradient(circle at 18% 22%, #c4b5fd 0 2px, transparent 4px),
+        radial-gradient(circle at 82% 16%, #a78bfa 0 2px, transparent 4px),
+        radial-gradient(circle at 48% 72%, #a78bfa 0 2px, transparent 5px),
+        radial-gradient(circle at 92% 65%, #c4b5fd 0 2px, transparent 4px),
+        radial-gradient(circle at 12% 85%, #8b5cf6 0 2px, transparent 5px);
+    animation: network-pulse 7s ease-in-out infinite alternate;
+}
+
+.hero-network-scan {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -35%;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, .09), transparent);
+    border-right: 1px solid rgba(167, 139, 250, .12);
+    transform: skewX(-18deg);
+    animation: network-scan 14s ease-in-out infinite;
+}
+
+@keyframes network-travel {
+    to { transform: rotateX(58deg) translateY(72px); }
+}
+
+@keyframes network-pulse {
+    from { opacity: .25; transform: translateY(0); }
+    to { opacity: .8; transform: translateY(-18px); }
+}
+
+@keyframes network-scan {
+    0%, 10% { translate: 0; opacity: 0; }
+    25% { opacity: 1; }
+    85%, 100% { translate: 500%; opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .hero-network { opacity: .6; }
+    .hero-network-grid { background-size: 54px 54px; }
+    @keyframes network-travel {
+        to { transform: rotateX(58deg) translateY(54px); }
+    }
+}
+
 .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
 @keyframes glow-drift { to { transform: translate(-8%, 8%) scale(1.12); } }
 .hero-image { padding-inline: 20px; }
