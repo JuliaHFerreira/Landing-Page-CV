@@ -1148,73 +1148,68 @@ section {
 /* Abertura animada, trajetória expansível e menu lateral */
 .hero-description { max-width: 42ch; }
 .hero { isolation: isolate; }
-.hero-network {
+/* Símbolos decorativos de programação ao fundo da abertura */
+.hero-code {
     position: absolute;
     inset: 0;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    perspective: 650px;
-    mask-image: linear-gradient(transparent, black 20%, black 85%, transparent);
+    color: var(--accent);
+    mask-image: linear-gradient(transparent, black 15%, black 85%, transparent);
 }
 
-.hero-network-grid {
+.code-symbol {
     position: absolute;
-    inset: -15% -40% -60%;
-    background-image:
-        linear-gradient(rgba(167, 139, 250, .14) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(167, 139, 250, .14) 1px, transparent 1px);
-    background-size: 72px 72px;
-    transform: rotateX(58deg);
-    transform-origin: center 65%;
-    animation: network-travel 16s linear infinite;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 90px);
+    line-height: 1;
+    opacity: .16;
+    text-shadow: 0 0 30px rgba(139, 92, 246, .2);
+    animation: code-drift 16s ease-in-out infinite alternate;
 }
 
-.hero-network-nodes {
+.code-braces { top: 13%; left: 7%; rotate: -12deg; }
+.code-tags { top: 12%; right: 10%; rotate: 10deg; animation-delay: -7s; }
+.code-arrow { bottom: 12%; left: 15%; rotate: -8deg; animation-delay: -4s; }
+.code-brackets { bottom: 13%; right: 9%; rotate: 14deg; animation-delay: -10s; }
+.code-parens { top: 48%; left: 47%; font-size: 40px; animation-delay: -12s; }
+
+.code-lines {
     position: absolute;
-    inset: -40px;
-    background-image:
-        radial-gradient(circle at 18% 22%, #c4b5fd 0 2px, transparent 4px),
-        radial-gradient(circle at 82% 16%, #a78bfa 0 2px, transparent 4px),
-        radial-gradient(circle at 48% 72%, #a78bfa 0 2px, transparent 5px),
-        radial-gradient(circle at 92% 65%, #c4b5fd 0 2px, transparent 4px),
-        radial-gradient(circle at 12% 85%, #8b5cf6 0 2px, transparent 5px);
-    animation: network-pulse 7s ease-in-out infinite alternate;
+    top: 26%;
+    left: -25px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    width: 180px;
+    opacity: .12;
+    rotate: -8deg;
+    animation: code-drift 20s ease-in-out -5s infinite alternate;
 }
 
-.hero-network-scan {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -35%;
-    width: 30%;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, .09), transparent);
-    border-right: 1px solid rgba(167, 139, 250, .12);
-    transform: skewX(-18deg);
-    animation: network-scan 14s ease-in-out infinite;
+.code-lines i {
+    display: block;
+    width: 80%;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent) 25%, transparent 25% 30%, var(--primary) 30% 70%, transparent 70% 75%, var(--accent) 75%);
 }
 
-@keyframes network-travel {
-    to { transform: rotateX(58deg) translateY(72px); }
-}
+.code-lines i:nth-child(2n) { width: 55%; margin-left: 22px; }
+.code-lines i:nth-child(3) { width: 95%; margin-left: 22px; }
+.code-lines-bottom { top: auto; left: auto; bottom: 26%; right: -20px; rotate: 8deg; animation-delay: -11s; }
 
-@keyframes network-pulse {
-    from { opacity: .25; transform: translateY(0); }
-    to { opacity: .8; transform: translateY(-18px); }
-}
-
-@keyframes network-scan {
-    0%, 10% { translate: 0; opacity: 0; }
-    25% { opacity: 1; }
-    85%, 100% { translate: 500%; opacity: 0; }
+@keyframes code-drift {
+    from { transform: translateY(0); opacity: .1; }
+    to { transform: translateY(-22px); opacity: .22; }
 }
 
 @media (max-width: 768px) {
-    .hero-network { opacity: .6; }
-    .hero-network-grid { background-size: 54px 54px; }
-    @keyframes network-travel {
-        to { transform: rotateX(58deg) translateY(54px); }
-    }
+    .hero-code { opacity: .65; }
+    .code-lines { width: 110px; }
+    .code-parens { left: 82%; top: 48%; }
 }
 
 .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
