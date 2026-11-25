@@ -7,14 +7,12 @@ const header = document.getElementById('header');
 
 // Toggle Menu Hamburguer
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
     sideMenu.classList.toggle('active');
     document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
 });
 
 // Fechar Menu
 closeMenu.addEventListener('click', () => {
-    hamburger.classList.remove('active');
     sideMenu.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
@@ -28,7 +26,6 @@ navLinks.forEach(link => {
         link.classList.add('active');
         
         // Fecha menu mobile
-        hamburger.classList.remove('active');
         sideMenu.classList.remove('active');
         document.body.style.overflow = 'auto';
     });

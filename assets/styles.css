@@ -73,6 +73,8 @@ body {
 
 /* ========== HEADER & NAVIGATION ========== */
 .header {
+    --nav-inset: clamp(20px, calc(4vw - 11px), 64px);
+    --nav-height: 70px;
     position: fixed;
     top: 0;
     left: 0;
@@ -84,13 +86,13 @@ body {
 }
 
 .navbar {
-    height: 70px;
+    height: var(--nav-height);
     display: flex;
     align-items: center;
 }
 
 .nav-container {
-    padding-inline: clamp(20px, calc(4vw - 11px), 64px);
+    padding-inline: var(--nav-inset);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,16 +141,8 @@ body {
     background: var(--accent);
 }
 
-.hamburger.active span:nth-child(1) {
-    transform: translateY(10.5px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-10.5px) rotate(-45deg);
+.hamburger[aria-expanded="true"] {
+    visibility: hidden;
 }
 
 /* Side Menu */
@@ -177,12 +171,16 @@ body {
 
 .close-menu {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: calc((var(--nav-height) - 44px) / 2);
+    right: calc(var(--nav-inset) - 7px);
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
     font-size: 36px;
     background: none;
     border: none;
-    color: var(--text-primary);
+    color: var(--primary);
     cursor: pointer;
     line-height: 1;
     transition: var(--transition);
@@ -190,7 +188,6 @@ body {
 
 .close-menu:hover {
     color: var(--accent);
-    transform: rotate(90deg);
 }
 
 .nav-list {
@@ -1238,11 +1235,9 @@ section {
         visibility: visible;
         transition: transform .32s ease;
     }
-    .hamburger.active { visibility: hidden; pointer-events: none; }
-    .close-menu:hover { transform: none; }
 @media (max-width: 768px) {
-    .navbar {
-        height: 56px;
+    .header {
+        --nav-height: 56px;
     }
 
     .hero {
