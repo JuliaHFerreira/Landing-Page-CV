@@ -198,6 +198,27 @@ for (let i = positions.length - 1; i > 0; i--) {
 }
 badges.forEach((badge, i) => badge.classList.replace(badge.classList[1], positions[i]));
 
+// Varia o fundo decorativo a cada abertura, mantendo a distribuição pela tela.
+document.querySelectorAll('.binary-stream').forEach((stream, index) => {
+    stream.style.setProperty('--x', (index * 3.85 + Math.random() * 2).toFixed(2) + '%');
+    stream.style.setProperty('--size', (10 + Math.random() * 12).toFixed(1) + 'px');
+    stream.style.setProperty('--speed', (22 + Math.random() * 24).toFixed(1) + 's');
+    stream.style.setProperty('--delay', (-Math.random() * 50).toFixed(1) + 's');
+});
+
+const symbolSlots = [
+    [5, 13], [83, 12], [3, 76], [85, 80], [44, 15],
+];
+for (let i = symbolSlots.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [symbolSlots[i], symbolSlots[j]] = [symbolSlots[j], symbolSlots[i]];
+}
+document.querySelectorAll('.code-symbol').forEach((symbol, index) => {
+    const [left, top] = symbolSlots[index];
+    symbol.style.inset = (top + Math.random() * 4) + '% auto auto ' + (left + Math.random() * 3) + '%';
+    symbol.style.animationDelay = (-Math.random() * 8) + 's';
+});
+
 function syncMenuState() {
     const open = sideMenu.classList.contains('active');
     hamburger.setAttribute('aria-expanded', String(open));
