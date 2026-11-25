@@ -11,19 +11,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
         .hero-description { max-width: 42ch; }
-        .hero-image { padding-inline: 16px; }
-        .card-kotlin { top: 23%; left: -12px; animation: floatCard 7s ease-in-out -2s infinite; }
-        .card-compose { right: -12px; bottom: 18%; animation: floatCard 7s ease-in-out -4s infinite; }
-        .card-erp { right: 10%; bottom: -14px; animation: floatCard 8s ease-in-out -1s infinite; }
-        .featured { border-color: #8258ce; }
-        .featured > p:last-child { color: #c7abfb; }
+        .hero { isolation: isolate; }
+        .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 10% 6% 8% 35%; background: radial-gradient(ellipse at 70% 35%, #7437cc55, transparent 54%), radial-gradient(ellipse at 35% 70%, #3443ac50, transparent 58%); filter: blur(38px); animation: glow-drift 12s ease-in-out infinite alternate; }
+        @keyframes glow-drift { to { transform: translate(-8%, 8%) scale(1.12); } }
+        .hero-image { padding-inline: 20px; }
+        .floating-card.card-1 { right: -14px; }
+        .floating-card.card-2 { left: -14px; }
+        .card-kotlin { top: 13%; left: -12px; animation: floatCard 7s ease-in-out -2s infinite; }
+        .card-compose { right: -12px; bottom: 22%; animation: floatCard 7s ease-in-out -4s infinite; }
+        .card-advpl { right: 12%; bottom: -14px; animation: floatCard 8s ease-in-out -1s infinite; }
+        .card-js { left: -18px; top: 43%; animation: floatCard 7s ease-in-out -3s infinite; }
+        .card-react { right: -18px; top: 40%; animation: floatCard 8s ease-in-out -5s infinite; }
+        .tech-icon { width: 21px; height: 21px; display: inline-grid; place-items: center; border-radius: 5px; color: #e4d6ff; background: #4a3071; font: 700 12px/1 system-ui, sans-serif; flex: none; }
+        .icon-js { color: #211800; background: #f4d34d; }
+        .icon-react { color: #83e1ff; background: #193c51; font-size: 20px; }
+        .sobre-content { border-left: 2px solid #9b70f3; padding: 0 0 0 clamp(18px, 4vw, 48px); }
+        .sobre-content .text-justify { text-align: left; }
+        .timeline-card, .skill-group, .project-card { background: linear-gradient(145deg, #211a30, #15141d 65%); border: 1px solid #533e70; }
+        .skill-group { border-top: 3px solid #9670e2; }
+        .timeline-period { font-variant-numeric: tabular-nums; }
+        .project-card { display: flex; flex-direction: column; }
+        .project-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+        .project-stack { margin: 0 0 20px; }
+        .project-stack span { border: 1px solid #674a96; background: #302146; color: #e5d7ff; }
+        .project-status { color: #c6efdb; font-size: .85rem; margin-bottom: 8px; }
         .btn-outline { color: #c7abfb; }
         :focus-visible { outline: 2px solid #c7abfb; outline-offset: 4px; }
         @media (max-width: 480px) {
             .image-container { margin-bottom: 26px; }
             .floating-card { font-size: .69rem; padding: 7px 9px; }
-            .card-kotlin { top: 23%; left: -8px; }
+            .card-kotlin { top: 12%; left: -8px; }
             .card-compose { right: -8px; }
+            .card-js { left: -8px; }
+            .card-react { right: -8px; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -88,6 +108,7 @@
                     <div class="hero-buttons">
                         <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
                         <a href="../assets/docs/Curriculo.pdf" class="btn btn-outline" download>Baixar currículo</a>
+                        <a href="#sobre" class="btn btn-outline">Ver mais do currículo</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -107,9 +128,11 @@
                             </svg>
                             <span>Spring Boot</span>
                         </div>
-                        <div class="floating-card card-kotlin">Kotlin</div>
-                        <div class="floating-card card-compose">Jetpack Compose</div>
-                        <div class="floating-card card-erp">TOTVS Protheus</div>
+                        <div class="floating-card card-kotlin"><span class="tech-icon" aria-hidden="true">K</span> Kotlin</div>
+                        <div class="floating-card card-compose"><span class="tech-icon" aria-hidden="true">◇</span> Jetpack Compose</div>
+                        <div class="floating-card card-advpl"><span class="tech-icon" aria-hidden="true">&lt;/&gt;</span> ADVPL</div>
+                        <div class="floating-card card-js"><span class="tech-icon icon-js" aria-hidden="true">JS</span> JavaScript</div>
+                        <div class="floating-card card-react"><span class="tech-icon icon-react" aria-hidden="true">⚛</span> React</div>
                     </div>
                 </div>
             </div>
@@ -236,6 +259,7 @@
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
                             <span class="tag">Photoshop</span>
                         </div>
                     </div>
@@ -306,12 +330,25 @@
                     <h2 class="section-title">Projetos em Destaque</h2>
                 </div>
                 <div class="projects-grid">
-                    <article class="project-card featured">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>Controle de estoque de matéria-prima</h3>
+                            <div class="project-tech project-stack">
+                                <span>Java 21</span><span>Spring Boot</span><span>Oracle</span><span>JPA/Hibernate</span><span>Flyway</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Sistema para cadastrar produtos e matérias-primas, controlar o estoque e consultar o que pode ser produzido com os insumos disponíveis.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JuliaHFerreira/raw-material-front-end" class="project-link">Front-end ↗</a>
+                            <a href="https://github.com/JuliaHFerreira/raw-material-control-system" class="project-link">Back-end ↗</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
                         <div class="project-header">
                             <h3>LoadFlow</h3>
-                            <div class="project-tech">
-                                <span>Em uso na Sportive</span>
-                                <span>Kotlin</span><span>Android</span><span>Jetpack Compose</span><span>TOTVS Protheus</span>
+                            <p class="project-status">Em uso na Sportive</p>
+                            <div class="project-tech project-stack" aria-label="Tecnologias do LoadFlow">
+                                <span>Kotlin</span><span>Android</span><span>Jetpack Compose</span><span>Material 3</span><span>APIs REST</span><span>OkHttp</span><span>Moshi</span>
                             </div>
                         </div>
                         <p class="project-description">Desenvolvi um WMS Android para a expedição consultar estoque e registrar movimentações em coletores de dados. O aplicativo lê códigos de barras e se integra ao Protheus via APIs REST.</p>
