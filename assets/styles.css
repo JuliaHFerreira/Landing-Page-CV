@@ -1490,6 +1490,12 @@ section {
         font-size: 14px;
     }
 
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: normal;
+    }
+
     .contact-item {
         min-height: 44px;
         gap: 6px;
