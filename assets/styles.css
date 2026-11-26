@@ -889,14 +889,17 @@ section {
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    max-width: 900px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
 .contact-item {
+    flex: 0 1 clamp(136px, 23vw, 220px);
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1096,10 +1099,6 @@ section {
     }
     
     .education-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-grid {
         grid-template-columns: 1fr;
     }
     
@@ -1489,10 +1488,6 @@ section {
     .contato-intro {
         margin-bottom: 12px;
         font-size: 14px;
-    }
-
-    .contact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .contact-item {
