@@ -878,14 +878,15 @@ section {
 /* ========== CONTATO SECTION - COMPACTA ========== */
 .contato {
     background: var(--bg-primary);
+    padding-block: clamp(24px, 4vw, 44px);
 }
 
-.contato-intro {
-    text-align: center;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 40px;
-    font-size: 16px;
+.contato .section-header {
+    margin-bottom: 16px;
+}
+
+.contato .section-title {
+    margin-bottom: 0;
 }
 
 .contact-grid {
@@ -1329,11 +1330,11 @@ section {
         50% { transform: translateY(-4px); }
     }
 
-    .projetos, .formacao, .contato {
+    .projetos, .formacao {
         padding-block: 32px;
     }
 
-    :is(.projetos, .formacao, .contato) .section-header {
+    :is(.projetos, .formacao) .section-header {
         margin-bottom: 16px;
     }
 
@@ -1341,7 +1342,7 @@ section {
         margin-bottom: 6px;
     }
 
-    :is(.sobre, .habilidades, .projetos, .formacao, .contato) .section-title {
+    :is(.sobre, .habilidades, .projetos, .formacao) .section-title {
         margin-bottom: 0;
     }
 
@@ -1483,11 +1484,6 @@ section {
     .edu-badge {
         justify-self: start;
         padding: 1px 8px;
-    }
-
-    .contato-intro {
-        margin-bottom: 12px;
-        font-size: 14px;
     }
 
     .contact-grid {
