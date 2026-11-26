@@ -210,6 +210,11 @@ toggleProjects.addEventListener('click', () => {
     }
 });
 
+const loadflowGallery = document.getElementById('loadflow-gallery');
+document.getElementById('open-loadflow-gallery').addEventListener('click', () => {
+    loadflowGallery.showModal();
+});
+
 const badges = [...document.querySelectorAll('.hero-image .floating-card')];
 const positions = badges.map(badge => badge.classList[1]);
 for (let i = positions.length - 1; i > 0; i--) {

@@ -321,7 +321,8 @@
                             <span>✓ Consulta de estoque por pedido, caixa, palete ou endereço</span>
                             <span>✓ Integração REST com o TOTVS Protheus</span>
                         </div>
-                        <button type="button" class="project-link" disabled>Repositório privado</button>
+                        <button type="button" class="project-link" id="open-loadflow-gallery"
+                            aria-haspopup="dialog" aria-controls="loadflow-gallery">Ver projeto</button>
                     </article>
                     <article class="project-card">
                         <div class="project-header">
@@ -659,6 +660,17 @@
             </ul>
         </div>
     </div>
+
+    <dialog class="project-gallery" id="loadflow-gallery" aria-labelledby="loadflow-gallery-title">
+        <header class="project-gallery-header">
+            <h2 id="loadflow-gallery-title">Galeria do LoadFlow</h2>
+            <form method="dialog">
+                <button type="submit" class="project-link" autofocus>Fechar</button>
+            </form>
+        </header>
+        <div class="project-gallery-photos"></div>
+        <p class="project-gallery-empty">As fotos do LoadFlow ainda não foram adicionadas.</p>
+    </dialog>
 
     <script src="scripts/script.js"></script>
     <script src="scripts/background.js"></script>
