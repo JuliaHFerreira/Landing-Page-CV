@@ -897,14 +897,6 @@ button.project-link {
     border-radius: 8px;
 }
 
-.project-gallery-photos:has(img) + .project-gallery-empty {
-    display: none;
-}
-
-.project-gallery-empty {
-    color: var(--text-secondary);
-}
-
 .in-progress {
     font-size: 14px;
     color: var(--accent);
